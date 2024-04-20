@@ -189,6 +189,28 @@
                             <li><a href="./index2.html">User Show</a></li>
                         </ul>
                     </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Category</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./index.html">Category Add</a></li>
+                            <li><a href="./index2.html">Category Show</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Authors</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./index.html">Author Add</a></li>
+                            <li><a href="./index2.html">Author Show</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Books</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./index.html">Book Add</a></li>
+                            <li><a href="./index2.html">Book Show</a></li>
+                        </ul>
+                    </li>
 
                         </ul>
                     </li>
