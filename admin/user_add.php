@@ -1,5 +1,6 @@
 <?php
 include("header.php");
+include("connection.php");
 ?>
 
 <div class="content-body">
