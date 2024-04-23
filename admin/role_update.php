@@ -52,5 +52,15 @@ $rows = mysqli_fetch_assoc($result);
 
 
 <?php
+if(isset($_POST['update'])){
+    $role = $_POST['role'];
+    $sql = "update role set Role_Name = '$role' where id = $Id";
+    $result = mysqli_query($conn,$sql);
+            echo "<script>
+            alert('Role Updated Successfully');
+            window.location.href = 'role_show.php'
+            </script>";
+}
+    
 include("footer.php");
 ?>

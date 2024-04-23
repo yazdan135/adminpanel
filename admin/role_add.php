@@ -56,6 +56,7 @@ if(isset($_POST['submit'])){
     $result = mysqli_query($conn,$sql);
         echo "<script>
         alert('Role Added Successfully');
+        window.location.href = 'role_show.php'
         </script>";
     
 }
