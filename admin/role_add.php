@@ -26,15 +26,16 @@ include("connection.php");
             </div>
             <div class="card-body">
                 <div class="basic-form">
-                    <form>
+                    <form method="POST">
 
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label>Role Name</label>
                                 <input type="text" name="role" class="form-control" placeholder="Enter your Role Name">
                             </div>
-                            
-                        <button type="submit" name="submit" class="btn btn-primary">Add Role</button>
+
+                            <button type="submit" name="submit" class="btn btn-primary">Add Role</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -43,6 +44,20 @@ include("connection.php");
 </div>
 
 
-        <?php
-        include("footer.php");
-        ?>
+
+
+
+
+<?php
+if(isset($_POST['submit'])){
+    $roleName = $_POST['role'];
+
+    $sql = "INSERT INTO role(Role_Name) VALUES ('$roleName')";
+    $result = mysqli_query($conn,$sql);
+        echo "<script>
+        alert('Role Added Successfully');
+        </script>";
+    
+}
+include("footer.php");
+?>
