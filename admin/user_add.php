@@ -70,5 +70,19 @@ $result = mysqli_query($conn,$sql);
 
 
 <?php
+if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $role = $_POST['u_r_id'];
+
+
+    $sql = "insert into users (username , password , RoleId_FK) VALUES ('$username', '$password' , '$role')";
+    $result = mysqli_query($conn,$sql);
+        echo "<script>
+        alert('User Has Been Added');
+        window.location.href = 'user_show.php'
+        </script>";
+    
+}
 include("footer.php");
 ?>
