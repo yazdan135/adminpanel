@@ -41,7 +41,7 @@ $result = mysqli_query($conn,$sql);
                                     <?php
                                     while($rows = mysqli_fetch_assoc($result)){
                                         ?>
-                                        <option value="<?php echo $rows['id']?>"><?php echo $rows['Role_Name']?>
+                                        <option value="<?php echo $rows['id']?>"><?php echo $rows['role_name']?>
                                         </option>;
                                     <?php } ?>
 

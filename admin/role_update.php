@@ -38,7 +38,7 @@ $rows = mysqli_fetch_assoc($result);
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label>Role Name</label>
-                                <input type="text" name="role" value="<?php echo $rows['Role_Name'] ?>" class="form-control" placeholder="Enter your Role Name">
+                                <input type="text" name="role" value="<?php echo $rows['role_name'] ?>" class="form-control" placeholder="Enter your Role Name">
                             </div>
 
                             <button type="submit" name="update" class="btn btn-primary">Update Role</button>
@@ -54,7 +54,7 @@ $rows = mysqli_fetch_assoc($result);
 <?php
 if(isset($_POST['update'])){
     $role = $_POST['role'];
-    $sql = "update role set Role_Name = '$role' where id = $Id";
+    $sql = "update role set role_name = '$role' where id = $Id";
     $result = mysqli_query($conn,$sql);
             echo "<script>
             alert('Role Updated Successfully');

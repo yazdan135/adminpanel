@@ -37,7 +37,7 @@ $result = mysqli_query($conn,$sql);
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-responsive-sm">
+                                    <table class="table table-responsive-sm text-dark text-center table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
@@ -52,7 +52,7 @@ $result = mysqli_query($conn,$sql);
                                                     while($rows = mysqli_fetch_assoc($result)){
                                                     ?>
                                                     <td><?php echo $rows['id'] ?></td>
-                                                    <td><?php echo $rows['Role_Name'] ?></td>
+                                                    <td><?php echo $rows['role_name'] ?></td>
                                                     <td><a href="role_update.php?id=<?php echo $rows['id'] ?>">Edit <i class="bi bi-pencil-square"></i></td>
                                                     <td><a href="role_delete.php?id=<?php echo $rows['id'] ?>">Delete <i class="bi bi-trash3-fill"></i></td>
                                             </tr>

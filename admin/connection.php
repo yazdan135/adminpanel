@@ -1,7 +1,7 @@
 <?php
 
 
-$conn = new mysqli("localhost", "root" , "" , "bookstore2307g1");
+$conn = new mysqli("localhost", "root" , "" , "bookstore");
 
 if(!$conn){
     die("Connection Failed");
