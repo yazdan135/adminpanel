@@ -3,8 +3,7 @@ include("header.php");
 include("connection.php");
 
 $sql = "select * from role";
-$result = mysqli_query($conn,$sql);
-
+$result = mysqli_query($conn, $sql);
 ?>
 
 <!--**********************************
@@ -34,20 +33,20 @@ $result = mysqli_query($conn,$sql);
             <div class="card-body">
                 <div class="basic-form">
                     <form method="POST">
-                    <div class="form-row">
+                        <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label>Role</label>
                                 <select id="inputState" name="u_r_id" class="form-control">
                                     <?php
-                                    while($rows = mysqli_fetch_assoc($result)){
-                                        ?>
-                                        <option value="<?php echo $rows['id']?>"><?php echo $rows['role_name']?>
+                                    while ($rows = mysqli_fetch_assoc($result)) {
+                                    ?>
+                                        <option value="<?php echo $rows['id'] ?>"><?php echo $rows['role_name'] ?>
                                         </option>;
                                     <?php } ?>
 
                                 </select>
                             </div>
-                        </div>    
+                        </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -59,7 +58,7 @@ $result = mysqli_query($conn,$sql);
                                 <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
                             </div>
                         </div>
-                                           
+
                         <button type="submit" name="submit" class="btn btn-primary">User Add</button>
                     </form>
                 </div>
@@ -70,19 +69,18 @@ $result = mysqli_query($conn,$sql);
 
 
 <?php
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $role = $_POST['u_r_id'];
 
 
     $sql = "insert into users (username , password , RoleId_FK) VALUES ('$username', '$password' , '$role')";
-    $result = mysqli_query($conn,$sql);
-        echo "<script>
+    $result = mysqli_query($conn, $sql);
+    echo "<script>
         alert('User Has Been Added');
         window.location.href = 'user_show.php'
         </script>";
-    
 }
 include("footer.php");
 ?>
