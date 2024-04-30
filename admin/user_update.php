@@ -1,15 +1,16 @@
 <?php
-include("./header.php");
-include("./connection.php");
+include("header.php");
+include("connection.php");
 
-$Id = $_GET['id'];
-$sql = "select * from users where id = $Id";
-$result = mysqli_query($conn , $sql);
-$rows = mysqli_fetch_assoc($result);
-
+$sql = "select * from role";
+$result = mysqli_query($conn,$sql);
 ?>
 
-<div class="content-body">
+
+<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
     <div class="container-fluid">
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
@@ -28,39 +29,68 @@ $rows = mysqli_fetch_assoc($result);
 
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">user Form</h4>
+                <h4 class="card-title">User update</h4>
             </div>
             <div class="card-body">
                 <div class="basic-form">
                     <form method="POST">
+                    <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Role</label>
+                                <select id="inputState" name="u_r_id" class="form-control">
+                                    <?php
+                                    while($rows = mysqli_fetch_assoc($result)){
+                                        ?>
+                                        <option value="<?php echo $rows['id']?>"><?php echo $rows['role_name']?>
+                                        </option>;
+                                    <?php } ?>
+
+                                </select>
+                            </div>
+                        </div>    
 
                         <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label>user update</label>
-                                <input type="text" name="user" value="<?php echo $rows['username'] ?>" class="form-control" placeholder="Enter your user Name">
+                            <div class="form-group col-md-6">
+                                <label>User Name</label>
+                                <?php
+                                $Id = $_GET['id'];
+                                $sql = "select * from users where id = $Id";
+                                $result = mysqli_query($conn,$sql);
+                                $rows = mysqli_fetch_assoc($result);
+                                ?>
+                                <input type="text" name="username" value="<?php echo $rows['username'] ?>" class="form-control" placeholder="Enter The Name">
                             </div>
-
-                            <button type="submit" name="update-submit" class="btn btn-primary">Update user</button>
+                            <div class="form-group col-md-6">
+                                <label>Password</label>
+                                <input type="password" name="password" value="<?php echo $rows['password'] ?>" class="form-control" placeholder="Enter Your Password">
+                            </div>
                         </div>
+                                           
+                        <button type="submit" name="update" class="btn btn-primary">Update User</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 <?php
 
-if(isset($_POST['update-submit'])){
+if(isset($_POST['update'])){
 
-    $user = $_POST['user'];
-    $sql = "update users set username = '$user' where id = '$Id'";
-    $result = mysqli_query($conn , $sql);
+    $role = $_POST['u_r_id'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    echo"<script> 
-    alert('user Added Successfully');
-        window.location.href = 'user_show.php'
-    </script>";
+    $sql = "update users set username = '$username', password = '$password', RoleId_FK = '$role' where id = $Id";
+    $result = mysqli_query($conn,$sql);
+            echo "<script>
+            alert('User Updated Successfully');
+            window.location.href = 'user_show.php'
+            </script>";
 }
 
-include("./footer.php");
+
+include("footer.php");
 ?>
