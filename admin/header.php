@@ -192,8 +192,8 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Category</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Category Add</a></li>
-                            <li><a href="./index2.html">Category Show</a></li>
+                            <li><a href="./category_add.php">Category Add</a></li>
+                            <li><a href="./category_show.php">Category Show</a></li>
                         </ul>
                     </li>
 
