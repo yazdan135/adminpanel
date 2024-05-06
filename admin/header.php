@@ -200,8 +200,8 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Authors</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Author Add</a></li>
-                            <li><a href="./index2.html">Author Show</a></li>
+                            <li><a href="./author_add.php">Author Add</a></li>
+                            <li><a href="./author_show.php">Author Show</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i

@@ -62,16 +62,28 @@
 <?php
 
 if(isset($_POST['update'])){
-        $category = $_POST['category-name'];
-        $image = $_FILES['image']['name'];
+    $category = $_POST['category-name'];
+    $image = $_FILES['image']['name'];
 
 
-        $sql = "update category set category = '$category', category_image = '$image' where id = $Id";
-        $result = mysqli_query($conn,$sql);
-        echo "<script>
-        alert('Category Updated Successfully');
-        window.location.href = 'category_show.php'
-        </script>";
+    $sql = "update category set category = '$category', category_image = '$image' where id = $Id";
+    $result = mysqli_query($conn,$sql);
+
+
+    if(isset($_FILES)){
+        $file_name = $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_type = $_FILES['image']['type'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+
+        move_uploaded_file($file_tmp, "images/category/" .$file_name);
+
+    }
+    echo "<script>
+    alert('Category Updated Successfully');
+    window.location.href = 'category_show.php'
+    </script>";
 
 }
 include("./footer.php");

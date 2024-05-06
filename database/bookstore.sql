@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2024 at 10:46 AM
+-- Generation Time: May 02, 2024 at 11:51 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -63,6 +63,22 @@ CREATE TABLE `category` (
   `category_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `category`, `category_image`) VALUES
+(2, 'ali imran khan', 'me.png'),
+(3, 'irshad', 'me.png'),
+(4, 'majid', 'me.png'),
+(5, 'zeeshan', 'me.png'),
+(6, 'anees', 'me.png'),
+(7, 'khalil', 'me.png'),
+(8, 'bilal', 'me.png'),
+(9, 'ismail', 'me.png'),
+(10, 'ubaid', 'me.png'),
+(13, 'yazdan', 'me.png');
+
 -- --------------------------------------------------------
 
 --
@@ -79,9 +95,16 @@ CREATE TABLE `role` (
 --
 
 INSERT INTO `role` (`id`, `role_name`) VALUES
-(1, 'admin'),
-(2, 'user'),
-(3, 'admin super');
+(10, 'Owner'),
+(11, 'booker 1'),
+(12, 'booker 2'),
+(14, 'booker 3'),
+(15, 'sales man 1'),
+(16, 'sales man 2'),
+(17, 'loader 1'),
+(18, 'loader 2'),
+(19, 'ware house keeper'),
+(21, 'system man');
 
 -- --------------------------------------------------------
 
@@ -101,7 +124,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `RoleId_FK`) VALUES
-(1, 'yazdan', 'tanzila', 3);
+(8, 'ali imran khan', 'ali1', 10),
+(9, 'irshad', 'irshad1', 11),
+(10, 'majid', 'majid1', 12),
+(11, 'zeeshan', 'zeeshan1', 14),
+(12, 'anees', 'anees1', 15),
+(13, 'khalil', 'khalil1', 16),
+(14, 'bilal', 'bilal', 17),
+(15, 'ismail', 'ismail1', 18),
+(17, 'ubaid', 'ubaid1', 19),
+(18, 'yazdan', 'yazdan1', 21);
 
 --
 -- Indexes for dumped tables
@@ -160,19 +192,19 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables

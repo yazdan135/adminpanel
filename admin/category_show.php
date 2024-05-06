@@ -54,7 +54,7 @@ $result = mysqli_query($conn,$sql);
                                                     ?>
                                                     <td><?php echo $rows['id'] ?></td>
                                                     <td><?php echo $rows['category'] ?></td>
-                                                    <td><?php echo $rows['category_image'] ?></td>
+                                                    <?php echo "<td><img src=\" images/category/{$rows['category_image']}\"height=50px; width=50px></td>"?>
                                                     <td><a href="category_update.php?id=<?php echo $rows['id'] ?>">Edit <i class="bi bi-pencil-square"></i></td>
                                                     <td><a href="category_delete.php?id=<?php echo $rows['id'] ?>">Delete <i class="bi bi-trash3-fill"></i></td>
                                             </tr>

@@ -2,11 +2,11 @@
 include("connection.php");
 
 $Id = $_GET['id'];
-$sql = "delete from category where id = $Id";
+$sql = "delete from authors where id = $Id";
 $result = mysqli_query($conn, $sql);
 
 echo "<script>
             alert('category Has Been Deleted');
-            window.location.href = 'category_show.php'
+            window.location.href = 'author_show.php'
         </script>";
 ?>
