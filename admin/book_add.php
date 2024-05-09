@@ -114,7 +114,7 @@ if(isset($_POST['submit'])){
     }
         echo "<script>
         alert('Books Has Been Added');
-        window.location.href = 'books_show.php'
+        window.location.href = 'book_show.php'
         </script>";
 
 }

@@ -65,8 +65,8 @@ $result = mysqli_query($conn,$sql);
                                                     <?php 
                                                         echo "<td><img src = \"images/books/{$rows['bookimage']}\" height=80px; width=80px; </td>"
                                                    ?>
-                                                    <td><a href="book_update.php?id=<?php echo $rows['id'] ?>" class="text-primary">Edit <i class="bi bi-pencil-square"></i></td>
-                                                    <td><a href="book_delete.php?id=<?php echo $rows['id'] ?>" class="text-danger">Delete <i class="bi bi-trash3-fill"></i></td>
+                                                    <td><a href="book_update.php?id=<?php echo $rows['id']?>" class="text-primary">Edit <i class="bi bi-pencil-square"></i></td>
+                                                    <td><a href="book_delete.php?id=<?php echo $rows['id']?>" class="text-danger">Delete <i class="bi bi-trash3-fill"></i></td>
                                             </tr>
                                                     <?php } ?>                                          
                                         </tbody>
@@ -83,5 +83,7 @@ $result = mysqli_query($conn,$sql);
 
 
 <?php
+
+
 include("footer.php");
 ?>
