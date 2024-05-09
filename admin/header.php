@@ -207,8 +207,8 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Books</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Book Add</a></li>
-                            <li><a href="./index2.html">Book Show</a></li>
+                            <li><a href="./book_add.php">Book Add</a></li>
+                            <li><a href="./book_show.php">Book Show</a></li>
                         </ul>
                     </li>
 
