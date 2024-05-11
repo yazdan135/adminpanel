@@ -66,7 +66,7 @@ include("./connection.php");
                         </div>
 <?php
 $Id = $_GET['id'];
-$sql = "select * from books where id = '$Id'";
+$sql = "select * from books where id = $Id";
 $result = mysqli_query($conn , $sql);
 $rows = mysqli_fetch_assoc($result);
 ?>
@@ -98,7 +98,7 @@ $rows = mysqli_fetch_assoc($result);
 </div>
 </div>
 <?php
-include("./footer.php");
+
 if(isset($_POST['update'])){
     $book = $_POST['bookname'];
     $description = $_POST['description'];
@@ -107,7 +107,7 @@ if(isset($_POST['update'])){
     $aut_id = $_POST['a_id'];
     $image = $_FILES['image']['name'];
 
-    $sql = "update books set book_name = '$book' , description = '$description' , price = '$price' , catld_FK = '$cat_id' , authid_FK = '$aut_id' , bookimage = '$image'";
+    $sql = "update books set book_name = '$book' , description = '$description' , price = '$price' , catld_FK = '$cat_id' , authid_FK = '$aut_id' , bookimage = '$image' where id = $Id";
     $result = mysqli_query($conn , $sql);
     
     if(isset($_FILES)){
@@ -117,7 +117,7 @@ if(isset($_POST['update'])){
         $file_tmp = $_FILES['image']['tmp_name'];
 
 
-        move_uploaded_file($file_tmp, "images/category/" .$file_name);
+        move_uploaded_file($file_tmp, "images/books/" .$file_name);
 
     }
     echo "<script>
@@ -128,5 +128,5 @@ if(isset($_POST['update'])){
 
 }
 
-
+include("./footer.php");
 ?>
